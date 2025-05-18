@@ -1,9 +1,9 @@
 function predict() {
-    const coin = document.getElementById("coinSelect").value;
-    const result = document.getElementById("result");
-    const predictions = {
-        "Bitcoin": "Verwacht: stijging 📈",
-        "Ethereum": "Verwacht: daling 📉"
-    };
-    result.textContent = predictions[coin] || "Geen voorspelling beschikbaar";
+  const crypto = document.getElementById("cryptoSelect").value;
+  const result = document.getElementById("result");
+
+  const outcomes = ["stijging 📈", "daling 📉", "stabiel 🤝"];
+  const prediction = outcomes[Math.floor(Math.random() * outcomes.length)];
+
+  result.textContent = `Voorspelling voor ${crypto} in de komende 6 uur: ${prediction}`;
 }
